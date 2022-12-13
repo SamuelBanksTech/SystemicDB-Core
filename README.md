@@ -28,10 +28,35 @@ First of all you will need to instantiate the core SystemicDB struct.
 sdb := NewSystemicDB()
 ```
 
-Insert, take a string key, a byte slice as its data, and a expiry time
+Insert: Takes a string key, a byte slice as its data, and a expiry time  
+This function will initiate a database optimisation function (AVL Tree Balancing)
 
 ```go
 sdb.Insert("my-key", []byte("This is my byte data"), 15 * time.Minute)
 ```
 
+Exists: Simply returns a bool value to denote whether that key exists or not 
 
+```go
+sdb.Exists("my-key")
+```
+
+Get: Take a key as a string and retrieves a struct containing the nodes data
+
+```go
+sdb.Get("my-key")
+
+//Returns...
+type NodeData struct {
+    Key    string
+    Value  []byte
+    Expiry int64 //This is a unix timestamp of the exact time it will expire and bew removed from the database
+}
+```
+
+Remove: Takes a key as a string, removes the node and all the associated data  
+This function will initiate a database optimisation function (AVL Tree Balancing)
+
+```go
+sdb.Remove("my-key")
+```
