@@ -10,9 +10,28 @@
 
 # SystemicDB - Core
 
+### Introduction
+
 This is the core SystemicDB package that is used in the full SystemicDB Server application. I can be imported and used in any Go application for standalone usage or one could wrap their own server around package for custom usage.
 
 ### Install
 
-``go get github.com/SamuelBanksTech/SystemicDB-Core``
+```bash 
+go get github.com/SamuelBanksTech/SystemicDB-Core
+```
+
+### Usage
+
+First of all you will need to instantiate the core SystemicDB struct.
+
+```go
+sdb := NewSystemicDB()
+```
+
+Insert, take a string key, a byte slice as its data, and a expiry time
+
+```go
+sdb.Insert("my-key", []byte("This is my byte data"), 15 * time.Minute)
+```
+
 
