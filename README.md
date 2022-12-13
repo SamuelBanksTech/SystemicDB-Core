@@ -63,6 +63,7 @@ sdb.Remove("my-key")
 
 ### TODO
 
-- ❇️ Implement a tag map to allow grouping of keys into tags to perform batch operations (Remove By Tag for example)
+- ❇️ Implement a tag map to allow grouping of keys
+  - Implement batch operations by tag (Remove By Tag for example)
 - ❇️ Produce benchmarks comparison tables (although I already know it's faster than most)
 - ❇️ Implement some overrides in struct init that will allow custom timings for Garbage Collection etc
