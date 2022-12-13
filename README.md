@@ -1,5 +1,5 @@
 <div align="center" style="background: black">
-<img height="300" src="./res/logo-dark.webp" alt="SystemicDB Logo" />
+<img height="300" src="./res/logo-transparent.webp" alt="SystemicDB Logo" />
 
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
 [![Go Report Card](https://goreportcard.com/badge/github.com/SamuelBanksTech/SystemicDB-Core)](https://goreportcard.com/report/github.com/SamuelBanksTech/SystemicDB-Core)
