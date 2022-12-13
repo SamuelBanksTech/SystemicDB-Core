@@ -20,7 +20,7 @@ import (
 	"time"
 )
 
-var sdb *systemicDB
+var sdb *SystemicDB
 var testKey = "test-key"
 var testValue = []byte("this is some test data")
 

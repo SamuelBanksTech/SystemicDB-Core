@@ -16,7 +16,7 @@ package systemicdb
 
 import "time"
 
-type systemicDB struct {
+type SystemicDB struct {
 	root *node
 	Meta sdbMeta
 }
@@ -44,8 +44,8 @@ type node struct {
 }
 
 // NewSystemicDB simply creates a new instance of the SystemicDB AVL Tree, starts the expired garbage collector and returns a pointer
-func NewSystemicDB() *systemicDB {
-	sdb := systemicDB{
+func NewSystemicDB() *SystemicDB {
+	sdb := SystemicDB{
 		Meta: sdbMeta{
 			NodeCount: 0,
 			InitTime:  time.Now().Unix(),

@@ -23,7 +23,7 @@ var ExpiredCollectionCycles int64
 
 // startExpiredGC this is only called by the NewSystemicDB function it starts the garbage collector that is responsible
 // for removing keys that have reached their expiry unix time
-func (t *systemicDB) startExpiredGC() {
+func (t *SystemicDB) startExpiredGC() {
 	go func() {
 		for {
 			//I suppose that if this was left running for decades it would need resetting at some point
@@ -39,16 +39,16 @@ func (t *systemicDB) startExpiredGC() {
 }
 
 // GetCollectionCycleCount returns a int64 of a count of how many times the expiredGC has run, this is used for testing
-func (t *systemicDB) GetCollectionCycleCount() *int64 {
+func (t *SystemicDB) GetCollectionCycleCount() *int64 {
 	return &ExpiredCollectionCycles
 }
 
-func (t *systemicDB) removeExpired() {
+func (t *SystemicDB) removeExpired() {
 	traverseTree(t.root, t)
 }
 
 // traverseTree gently traverses the tree and passes each node to the cleanNodes function for expiry checking
-func traverseTree(node *node, root *systemicDB) {
+func traverseTree(node *node, root *SystemicDB) {
 	if node == nil {
 		return
 	}
@@ -64,7 +64,7 @@ func traverseTree(node *node, root *systemicDB) {
 }
 
 // cleanNodes simple check to see if the node has reach or exceeded the expiry unix timestamp, if so it gets deleted
-func cleanNodes(node *node, root *systemicDB) {
+func cleanNodes(node *node, root *SystemicDB) {
 	t := time.Now().Unix()
 
 	if node.expiryUnix <= t {

@@ -33,7 +33,7 @@ func strToInt(str string) (uint64, error) {
 }
 
 // Insert inserts an element into the AVL Tree and returns the newly created node (includes a rebalance of the tree)
-func (t *systemicDB) Insert(keyStr string, value []byte, expiry time.Duration) *node {
+func (t *SystemicDB) Insert(keyStr string, value []byte, expiry time.Duration) *node {
 
 	key, err := strToInt(keyStr)
 	if err != nil {
@@ -66,7 +66,7 @@ func insert(n *node, key uint64, keyStr string, value []byte, expiry time.Durati
 }
 
 // Remove removes an element from the AVL Tree (includes a rebalance of the tree)
-func (t *systemicDB) Remove(keyStr string) {
+func (t *SystemicDB) Remove(keyStr string) {
 	key, err := strToInt(keyStr)
 	if err != nil {
 		return
@@ -102,7 +102,7 @@ func remove(n *node, key uint64) *node {
 }
 
 // Exists searches for an element in the AVL Tree and return a bool (true is exists)
-func (t *systemicDB) Exists(keyStr string) bool {
+func (t *SystemicDB) Exists(keyStr string) bool {
 	key, err := strToInt(keyStr)
 	if err != nil {
 		return false
@@ -126,7 +126,7 @@ func exists(n *node, key uint64) bool {
 }
 
 // Get searches for an element in the AVL Tree and returns a NodeData struct which is important parts of the node that a user could need
-func (t *systemicDB) Get(keyStr string) *NodeData {
+func (t *SystemicDB) Get(keyStr string) *NodeData {
 	key, err := strToInt(keyStr)
 	if err != nil {
 		return nil
@@ -161,7 +161,7 @@ func get(n *node, key uint64) *node {
 }
 
 // IsBalanced returns true if the AVL Tree is balanced.
-func (t *systemicDB) IsBalanced() bool {
+func (t *SystemicDB) IsBalanced() bool {
 	return isBalanced(t.root)
 }
 
@@ -179,7 +179,7 @@ func isBalanced(n *node) bool {
 }
 
 // Min returns the minimum element in the AVL Tree.
-func (t *systemicDB) Min() uint64 {
+func (t *SystemicDB) Min() uint64 {
 	return minKey(t.root)
 }
 
@@ -196,7 +196,7 @@ func minKey(n *node) uint64 {
 }
 
 // Max returns the maximum element in the AVL Tree.
-func (t *systemicDB) Max() uint64 {
+func (t *SystemicDB) Max() uint64 {
 	return maxKey(t.root)
 }
 
